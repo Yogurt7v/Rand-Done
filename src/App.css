@@ -1,0 +1,178 @@
+#root {
+  max-width: 1280px;
+  margin: 80px auto;
+  padding: 2rem;
+  text-align: center;
+  
+}
+
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  margin: auto;
+  padding: 2em;
+  max-width: 370px;
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+  border: 1px solid grey;
+  border-radius: 15px;
+  background-color: white;
+}
+
+.inputs{
+  margin-top: 10px;
+  display: flex;
+  grid: 6 1;
+  gap: 10px;
+}
+
+.quantity{
+  width: 100px;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+input {
+  letter-spacing: 0.05em;
+  text-align: center;
+  font-size: 16px;
+  border-radius: 14px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+
+input::placeholder{
+  text-align: center;
+  font-size: 16px;
+  letter-spacing: 0.05em;
+  color: #213547;
+}
+
+
+input:focus{
+  outline: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+-webkit-appearance: none;
+}
+
+
+
+.range{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#range{
+  margin: auto;
+  width: 80%;
+  border-radius: 14px;
+}
+
+.coefficient{
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.resetBtn{
+  margin-top: 20px;
+  width: 90%;
+}
+
+h1{
+  font-size: 3rem;
+  color: #102232;
+  text-shadow: 11px 12px 22px #255075;
+}
+
+.componentBtn{
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  width: 200px;
+  margin-bottom: 20px;
+  transition: ease-in-out 0.8s;
+}
+
+.componentBtn:hover{
+  background-color: white;
+  border: 1px solid grey;
+    opacity: 1;
+}
+
+.edited{
+  margin: 0;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+}
+
+.edited2{
+  margin: 0;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 40px;
+  height: 40px;
+}
+
+.select{
+  margin: 10px auto;
+  max-width: 300px;
+  /* display: flex; */
+  align-items: center;
+  justify-content: center;
+}
+
+.svg{
+  padding: 0;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+}
+
+.none{
+  display: none;
+}
+
+.settingsWrapper{
+  animation: myAnim 0.5s ease 0s 1 normal forwards;
+}
+
+@keyframes myAnim {
+	0% {
+		opacity: 0;
+		transform: translateY(-10px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+

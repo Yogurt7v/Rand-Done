@@ -1,0 +1,114 @@
+.sinlgeCard{
+  border: 1px solid grey;
+  border-radius: 15px;
+  margin-bottom: 30px;
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+}
+
+.sinlgeCard:nth-child(even){
+  background-color: #f1f1f1;
+}
+
+.cardItem{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 0 0 20px;
+    gap: 10px;
+    margin: 10px;
+    
+  }
+
+.cardItem:first-child{
+  padding-top: 10px;
+}  
+.cardItem:last-child{
+  padding-bottom: 10px;
+}
+
+.copy{
+  background-color: white;
+  padding: 8px;
+}
+
+.copy:active{
+  background-color: rgb(228, 228, 228);
+}
+
+
+.svg{
+  padding: 0;
+  margin: 0;
+  width: 20px;
+  height: 20px;
+}
+
+
+.cardItemPrice{
+  display:flex;
+  gap: 30px;
+}
+
+.cardItemInterest{
+  display: flex;
+  gap: 15px;
+}
+
+.componentBtn{
+  margin: auto;
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  width: 200px;
+  margin-bottom: 20px;
+  transition: ease-in-out 0.8s;
+}
+
+.componentBtn:hover{
+    opacity: 1;
+}
+
+
+.open {
+  transform: translateY(-150%);
+  animation: ani 1s forwards;
+}
+
+@keyframes ani {
+  0% {transform: translateY(-150%);}
+  100% {transform: translateY(0);}
+}
+
+
+.bodred{
+  border: 1px solid grey;
+  border-radius: 15px;
+  margin-bottom: 30px;
+}
+
+.title{
+  text-decoration: underline;
+}
+
+
+.NumberWrapper{
+  font-size: 12px;
+  font-weight: bold;
+  display: flex;
+  justify-content: right;
+
+}
+
+.number{
+  margin: 10px 18px 18px 0px;
+  color: #1f66f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgb(196, 196, 196);
+  border-radius: 50%;
+}
