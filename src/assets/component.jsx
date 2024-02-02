@@ -13,7 +13,7 @@ export const Component = ({ result, reset, interest }) => {
   }
 
   return (
-    <div className={style.component}>
+    <div className={style.component} key={Math.random()}>
       <button
         className={style.componentBtn}
         onClick={() => setVisible(!visible)}
