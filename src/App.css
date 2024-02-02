@@ -59,7 +59,7 @@
 input {
   letter-spacing: 0.05em;
   text-align: center;
-  font-size: 16px;
+  /* font- ze: 16px; */
   border-radius: 14px;
   border: 1px solid #ccc;
   padding: 10px;

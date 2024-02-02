@@ -1,5 +1,5 @@
 import Component from './assets/component'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import dataBase from './assets/dataBase'
 import Select from 'react-select'
 import settings from './assets/settings-svgrepo-com.svg'
@@ -7,6 +7,8 @@ import admin from './assets/admin.svg'
 import './App.css'
 
 function App() {
+
+  // const [newNum, setNewNum] = useState(0)
   const [docSum, setDocSum] = useState(0)
   const [quantity, setQuantity] = useState(0)
   const [coefficient, setCoefficient] = useState(0.3)
@@ -73,9 +75,20 @@ function App() {
 
   Final(docSum, quantity, dataBase)
 
+  // function FormatNum (num) {
+  //   let a  = new Intl.NumberFormat('ru-RU').format(num)
+  //   console.log(a);
+  //   return a
+  // }
+
+  // useEffect(() => {
+  //   const formattedNum = FormatNum(docSum);
+  //   document.getElementById('sum').value = formattedNum;
+  // }, [docSum]);
+
 
   function Reset () {
-    // document.getElementById("range").value = {coefficient};
+    document.getElementById("range").value = {coefficient};
     document.getElementById("sum").value = "";
     document.getElementById("quantity").value = "";
     setDocSum(0)
@@ -96,7 +109,7 @@ function App() {
       <h1>Randomizer 2.0</h1>
       <div className="card">
         <div className="inputs">
-          <input type="number" autoComplete='off' min="0" className='sum' placeholder='Сумма'onChange={(e)=> {setDocSum(e.target.value)}} id='sum'/>
+          <input type="number" autoComplete='off' min="0" className='sum' placeholder='Сумма' onChange={(e)=> {setDocSum(e.target.value)}} id='sum'/>
           <input type="number" autoComplete='off' min="0" className='quantity' placeholder='Кол-во' onChange={(e)=> setQuantity(e.target.value)} id='quantity'/>        
         </div>
           <div className="settingsWrapper none">
