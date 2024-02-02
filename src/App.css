@@ -30,13 +30,17 @@
   border: 1px solid grey;
   border-radius: 15px;
   background-color: white;
+
+  @media (prefers-color-scheme: dark) {
+    background-color: #3B3B3B;
+  }
 }
 
 .inputs{
   margin-top: 10px;
   display: flex;
-  grid: 6 1;
-  gap: 10px;
+  align-items: center;
+  justify-content: space-evenly;
 
   @media screen and (max-width: 450px) {
     flex-direction: column;
@@ -59,7 +63,7 @@
 input {
   letter-spacing: 0.05em;
   text-align: center;
-  /* font- ze: 16px; */
+  font-size: 16px;
   border-radius: 14px;
   border: 1px solid #ccc;
   padding: 10px;

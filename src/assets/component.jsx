@@ -2,7 +2,6 @@ import style from "./component.module.css";
 import copySvg from "./copy-svgrepo-com.svg";
 import copySvgBlue from "./copy-svgrepo-com2.svg";
 import { useState } from "react";
-// import dataBase from "./dataBase";
 
 // eslint-disable-next-line react/prop-types
 export const Component = ({ result, reset, interest }) => {
@@ -21,7 +20,7 @@ export const Component = ({ result, reset, interest }) => {
       >
         Наценка?
       </button>
-      {result.length === 0 ? null : (
+      {result?.length === 0 ? null : (
         <button style={{ width: "300px", marginBottom: "20px" }} onClick={reset}>
           Сбросить
         </button>

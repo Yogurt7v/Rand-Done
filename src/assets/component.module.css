@@ -7,6 +7,9 @@
 
 .sinlgeCard:nth-child(even){
   background-color: #f1f1f1;
+  @media (prefers-color-scheme: dark) {
+    background-color: #3B3B3B;
+  }
 }
 
 .cardItem{
@@ -29,6 +32,9 @@
 .copy{
   background-color: white;
   padding: 8px;
+  @media (prefers-color-scheme: dark) {
+    background-color: black;
+  }
 }
 
 .copy:active{

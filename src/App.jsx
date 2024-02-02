@@ -1,14 +1,16 @@
 import Component from './assets/component'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import dataBase from './assets/dataBase'
 import Select from 'react-select'
 import settings from './assets/settings-svgrepo-com.svg'
 import admin from './assets/admin.svg'
 import './App.css'
+import { useNavigate } from 'react-router-dom'
+import PASS from './assets/pass'
 
 function App() {
 
-  // const [newNum, setNewNum] = useState(0)
+  const navigate = useNavigate();
   const [docSum, setDocSum] = useState(0)
   const [quantity, setQuantity] = useState(0)
   const [coefficient, setCoefficient] = useState(0.3)
@@ -21,10 +23,6 @@ function App() {
     { value: 4, label: '4%' },
     { value: 5, label: '5%' }
   ]
-  const MyComponent = () => (
-    <Select options={options} onChange={e => setInterest(e.value)} value={{value: interest, label: `${interest}%`}} defaultValue={{value: 5, label: '5%'}} className='select'/>
-  )
-
   let result = [];
 
   function Final (docSum, quantity, dataBase) {
@@ -73,8 +71,6 @@ function App() {
     return result
   }
 
-  Final(docSum, quantity, dataBase)
-
   // function FormatNum (num) {
   //   let a  = new Intl.NumberFormat('ru-RU').format(num)
   //   console.log(a);
@@ -97,34 +93,60 @@ function App() {
     result = []
   }
 
+  function CheckPass (){
+    let temp = prompt("Пароль", "")
+    if (temp === PASS) {
+      navigate('/AdminPanel')
+    }
+    else {
+      alert ("Пароль неверен")
+    }
+  }
+
+
+
+  const MyComponent = () => (
+    <Select options={options} onChange={e => setInterest(e.value)} value={{value: interest, label: `${interest}%`}} defaultValue={{value: 5, label: '5%'}} className='select'/>
+  )
+
+
+  Final(docSum, quantity, dataBase)
+
 
   return (
-    <>
-      <div className="header">
-		<button className="componentBtn edited2"><img className='svg' src={admin}/></button>
-        <button className="componentBtn edited" onClick={() => {
-			document.querySelector('.settingsWrapper').classList.toggle('none')}}><img className="svg" src={settings} alt="Settings" />
-		</button>
-      </div>
-      <h1>Randomizer 2.0</h1>
-      <div className="card">
-        <div className="inputs">
-          <input type="number" autoComplete='off' min="0" className='sum' placeholder='Сумма' onChange={(e)=> {setDocSum(e.target.value)}} id='sum'/>
-          <input type="number" autoComplete='off' min="0" className='quantity' placeholder='Кол-во' onChange={(e)=> setQuantity(e.target.value)} id='quantity'/>        
+      <>
+        <div className="header">
+          <button className="componentBtn edited2" onClick={CheckPass}><img className="svg" src={admin} alt="Reset" /></button>
+      {/* <NavLink  to="/AdminPanel" className="componentBtn edited2" style={{borderRadius: '10px'}}><img className='svg' src={admin}/></NavLink> */}
+          <button className="componentBtn edited" onClick={() => {
+        document.querySelector('.settingsWrapper').classList.toggle('none')}}><img className="svg" src={settings} alt="Settings" />
+      </button>
         </div>
-          <div className="settingsWrapper none">
-            <div className='range'>
-              <label>Разброс цены</label>
-              <div className='coefficient'>{coefficient*100} %</div>
-              <input type="range" id="range" name="range" min="0.1" max="0.9" step="0.1" defaultValue="0.3" onChange={(e)=> setCoefficient(e.target.value)}></input>
-            </div>
-            <MyComponent />
-            <button className="resetBtn" onClick={Reset}>Обнулить параметры</button>
+        <h1>Randomizer 2.0</h1>
+        <div className="card">
+          <div className="inputs">
+            <input type="number" autoComplete='off' min="0" className='sum' placeholder='Сумма' onChange={(e)=> {setDocSum(e.target.value)}} id='sum'/>
+            <input type="number" autoComplete='off' min="0" className='quantity' placeholder='Кол-во' onChange={(e)=> setQuantity(e.target.value)} id='quantity'/>    
           </div>
-      </div>
-      <Component result={result } reset={Reset} interest={interest}/>
-    </>
+            <div className="settingsWrapper none">
+              <div className='range'>
+                <label>Разброс цены</label>
+                <div className='coefficient'>{coefficient*100} %</div>
+                <input type="range" id="range" name="range" min="0.1" max="0.9" step="0.1" defaultValue="0.3" onChange={(e)=> setCoefficient(e.target.value)}></input>
+              </div>
+              <MyComponent />
+              <button className="resetBtn" onClick={Reset}>Обнулить параметры</button>
+            </div>
+        </div>
+        <Component result={result} reset={Reset} interest={interest}/>
+
+      </>
+
+
   )
 }
+
+
+
 
 export default App;
