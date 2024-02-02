@@ -137,7 +137,7 @@ function App() {
       <div className="card">
         <div className="inputs">
           <CurrencyInput
-            decimalSeparator=","
+            decimalSeparator="."
             autoComplete="off"
             maxLength={10}
             allowNegativeValue={false}
