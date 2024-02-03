@@ -48,12 +48,12 @@ export const AdminPanel = () => {
         }}
       ></button>
 
-      <div className="card" style={{ marginTop: "20px" }}>
+      <div className="card" style={{ marginTop: "20px", marginBottom: "20px" }}>
         <h3>Admin Panel</h3>
         <h4>Сейчас в базе {dataBase.length} номенклатур</h4>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
-          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px"}}>
             <input
               style={{ width: "300px" }}
               type="text"
@@ -86,6 +86,10 @@ export const AdminPanel = () => {
             alignItems: "center",
             gap: "30px",
             justifyContent: "center",
+            backgroundColor: "white",
+            borderRadius: "14px",
+            marginBottom: "20px",
+            padding: "0px 10px",
           }}
         >
           <p>{item.baseTitle}</p>

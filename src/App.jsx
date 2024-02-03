@@ -1,5 +1,5 @@
 import Component from "./assets/component";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import dataBase from "./assets/dataBase";
 import Select from "react-select";
 import settings from "./assets/settings-svgrepo-com.svg";
@@ -10,6 +10,7 @@ import PASS from "./assets/pass";
 import CurrencyInput from "react-currency-input-field";
 
 function App() {
+  const ref = useRef(null);
   const navigate = useNavigate();
   const [docSum, setDocSum] = useState(0);
   const [quantity, setQuantity] = useState(0);
@@ -135,6 +136,7 @@ function App() {
       <div className="card">
         <div className="inputs">
           <CurrencyInput
+            ref={ref}
             decimalSeparator="."
             autoComplete="off"
             maxLength={12}

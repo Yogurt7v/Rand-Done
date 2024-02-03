@@ -3,14 +3,31 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+
+  @media (prefers-color-scheme: light) {
+  color-scheme: light;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
+  background-color: #e5e5f7;
+  opacity: 0.8;
+  background-image: radial-gradient(#444cf7 0.5px, #e5e5f7 0.5px);
+  background-size: 10px 10px;
+  };
+
+  @media (prefers-color-scheme: dark) {
+  color-scheme: dark;
+  background-color: #242424;
+  opacity: 0.8;
+  background-image: radial-gradient(#722ab0 0.5px, #262639 0.5px);
+  background-size: 10px 10px;
+  };
+
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 
 }
 
@@ -51,7 +68,23 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-  color: #0e2455;
+
+
+ color: #636bbf;
+  background-image: -webkit-linear-gradient(45deg, #636bbf 0%, #313abd 33%, #22a4b5 67%);
+  background-clip: text; 
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  @media (prefers-color-scheme: dark) {
+    color: #636bbf;
+    background-image: -webkit-linear-gradient(45deg, #636bbf 0%, #313abd 33%, #730c80 67%);
+    background-clip: text; 
+    -webkit-background-clip: text;
+  
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 button {
