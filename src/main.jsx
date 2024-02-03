@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import AdminPanel from './assets/adminPanel.jsx'
+import AdminPanel from './pages/adminPanel.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 <BrowserRouter>

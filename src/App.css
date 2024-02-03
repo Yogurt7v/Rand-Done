@@ -44,7 +44,6 @@
 
   @media screen and (max-width: 450px) {
     flex-direction: column;
-    
   }
 }
 
@@ -116,7 +115,7 @@ input[type="number"]::-webkit-outer-spin-button {
   width: 90%;
 }
 
-h1{
+h1 {
   font-size: 3rem;
   color: #102232;
   text-shadow: 11px 12px 22px #255075;

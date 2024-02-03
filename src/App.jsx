@@ -89,9 +89,7 @@ function App() {
   function Reset() {
     document.getElementById("range").value = { coefficient };
     document.getElementById("quantity").value = "";
-    let a = document.getElementById("sum");
-    console.log((a.value = ""));
-    setDocSum(0);
+    // setDocSum(0);
     setQuantity(0);
     setCoefficient(0.3);
     result = [];
@@ -139,7 +137,7 @@ function App() {
           <CurrencyInput
             decimalSeparator="."
             autoComplete="off"
-            maxLength={10}
+            maxLength={12}
             allowNegativeValue={false}
             id="sum"
             placeholder="Сумма"

@@ -20,9 +20,14 @@ export const AdminPanel = () => {
   };
 
   useEffect(() => {
-    if (searchInput === "") {
+    if (searchInput.length === 0) {
+      console.log(searchInput);
       setFilteredData([]);
-    } else {
+    } else
+    if(searchInput === "all"){
+      setFilteredData(dataBase);
+    } 
+    else {
       setFilteredData(
         dataBase.filter((item) =>
           item.title.toLowerCase().includes(searchInput.toLowerCase())
@@ -45,6 +50,7 @@ export const AdminPanel = () => {
 
       <div className="card" style={{ marginTop: "20px" }}>
         <h3>Admin Panel</h3>
+        <h4>Сейчас в базе {dataBase.length} номенклатур</h4>
 
         <div style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
