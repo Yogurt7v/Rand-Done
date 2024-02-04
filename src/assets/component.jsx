@@ -65,7 +65,7 @@ export const Component = ({ result, reset, interest }) => {
                     className={style.copy}
                     onClick={() =>
                       Copy(
-                        Math.round((item.price + item.price * 0.05) * 1000) /
+                        Math.round((item.price + item.price * (Number(interest)/ 100 )) * 1000) /
                           1000
                       )
                     }

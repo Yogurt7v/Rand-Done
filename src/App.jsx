@@ -1,3 +1,5 @@
+import Slider from 'rc-slider';
+import 'rc-slider/assets/index.css';
 import Component from "./assets/component";
 import { useState, useRef } from "react";
 import dataBase from "./assets/dataBase";
@@ -25,6 +27,7 @@ function App() {
     { value: 5, label: "5%" },
   ];
   let result = [];
+
   function Final(docSum, quantity, dataBase) {
     let medium = docSum / quantity;
     let max = medium * (1 + Number(coefficient));
@@ -35,7 +38,7 @@ function App() {
       let randomSum =
         Math.round((Math.random() * (max - min) + min) * 100) / 100;
       let randomQuantity =
-        Math.round((randomSum / dataBase[randomID]?.price) * 100) / 100;
+        Math.round((randomSum / dataBase[randomID].price) * 100) / 100;
 
       result.push({
         id: dataBase[randomID].id,
@@ -88,9 +91,11 @@ function App() {
   // }, [docSum]);
 
   function Reset() {
-    document.getElementById("range").value = { coefficient };
-    document.getElementById("quantity").value = "";
-    // setDocSum(0);
+    document.getElementsByClassName("rc-slider-handle")[0].style.left ="25%";
+    document.getElementsByClassName("rc-slider-track")[0].style.width ="25%";
+    document.getElementsByClassName("quantity")[0].value = "";
+
+    setInterest(5);
     setQuantity(0);
     setCoefficient(0.3);
     result = [];
@@ -105,7 +110,7 @@ function App() {
     }
   }
 
-  const MyComponent = () => (
+  const SelectComponent = () => (
     <Select
       options={options}
       onChange={(e) => setInterest(e.value)}
@@ -160,23 +165,22 @@ function App() {
           <div className="range">
             <label>Разброс цены</label>
             <div className="coefficient">{coefficient * 100} %</div>
-            <input
-              type="range"
-              id="range"
-              name="range"
-              min="0.1"
-              max="0.9"
-              step="0.1"
-              defaultValue="0.3"
-              onChange={(e) => setCoefficient(e.target.value)}
-            ></input>
+            <Slider
+            ref={ref}
+              className='slider'
+              min={0.1}
+              max={0.9}
+              step={0.1}
+              defaultValue={0.3}
+              onChange={(value) => setCoefficient(value)}
+              ></Slider>
           </div>
-          <MyComponent />
+          <SelectComponent />
           <button className="resetBtn" onClick={Reset}>
             Обнулить параметры
           </button>
         </div>
-      </div>
+      </div>  
       <Component result={result} reset={Reset} interest={interest} />
     </>
   );
