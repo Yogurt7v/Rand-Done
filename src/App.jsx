@@ -149,6 +149,7 @@ function App() {
             id="sum"
             placeholder="Сумма"
             decimalsLimit={2}
+            autoFocus = {true}
             onValueChange={(value) => setDocSum(Number(value))}
           />
           <input
